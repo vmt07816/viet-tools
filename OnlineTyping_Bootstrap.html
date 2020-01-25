@@ -43,6 +43,9 @@
 			s.forEach((node) => {
 				if(node.classList)
 				node.classList.remove('selected');
+				
+				radiobtn = document.getElementById("theid");
+				radiobtn.checked = true;
 				}); 
 
 			obj.classList.add('selected');
