@@ -20,43 +20,34 @@
      input[type='radio']{
      margin-left: 5px
      }
-     
-     input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #d1d3d1;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
 
-    input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #ffa500;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
  
-    .box-a, .box-b, .box-c {
+    .box-a{
     background-color:#fff;
     border:3px solid #888;
     border-radius: 7px;
     }
+	.box-a:hover {
+	  background-color: #ffa;
+	}
+	.box-a.selected {
+    background-color: rgba(41, 103, 182, 0.89);
+    color: #FFF;
+}
     .col-a{
     }
     </style>
+		<script type="text/javascript">
+		function change_btn_bgr (obj) {
+			var s = obj.parentNode.childNodes; 
+			s.forEach((node) => {
+				if(node.classList)
+				node.classList.remove('selected');
+				}); 
+
+			obj.classList.add('selected');
+		}
+	</script>
   </head>
   <body>
     <div class="container">
@@ -72,33 +63,33 @@
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   <div class="row">
     <div class="col-sm-2 top5">
-          <div class="row full-width mt-0 box-a">
+          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
             <div class="radio radio-danger">
-              <input type="radio" name="survey" id="Radios1" value="Telex">
+              <input type="radio" name="radio_btn" value="Telex" onclick="AVIMObj.setMethod(1);">
               <label>
                 TELEX
               </label>
             </div>
           </div>
-          <div class="row full-width mt-2 box-a">
+          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
             <div class="radio radio-danger">
-              <input type="radio" name="survey" id="Radios1" value="Vni">
+              <input type="radio" name="radio_btn"  value="Vni" onclick="AVIMObj.setMethod(2);">
               <label>
                 VNI
               </label>
             </div>
           </div>
-          <div class="row full-width mt-2 box-a">
+          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
             <div class="radio radio-danger">
-              <input type="radio" name="survey" id="Radios1" value="Viqr">
+              <input type="radio" name="radio_btn" id="Radios3" value="Viqr" onclick="AVIMObj.setMethod(3);">
               <label>
                 VIQR
               </label>
             </div> 
           </div> 
-          <div class="row full-width mt-2 box-a">
+          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
             <div class="radio radio-danger">
-              <input type="radio" name="survey" id="Radios1" value="Off">
+              <input type="radio" name="radio_btn" id="Radios4" value="Off">
               <label>
                 OFF
               </label>
@@ -115,12 +106,15 @@
     
   </div>
 
-
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="avim.js"></script>
+
+	
+	
   </body>
 </html>
