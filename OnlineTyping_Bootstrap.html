@@ -21,14 +21,14 @@
      margin-left: 5px
      }
 
- 
+
     .box-a{
     background-color:#fff;
     border:3px solid #888;
     border-radius: 7px;
     }
 	.box-a:hover {
-	  background-color: #ffa;
+	  background-color: #9dcde2;
 	}
 	.box-a.selected {
     background-color: rgba(41, 103, 182, 0.89);
@@ -37,87 +37,154 @@
     .col-a{
     }
     </style>
-		<script type="text/javascript">
-		function change_btn_bgr (obj) {
-			var s = obj.parentNode.childNodes; 
-			s.forEach((node) => {
-				if(node.classList)
-				node.classList.remove('selected');
-				
-				radiobtn = document.getElementById("theid");
-				radiobtn.checked = true;
-				}); 
 
-			obj.classList.add('selected');
-		}
-	</script>
+
   </head>
   <body>
     <div class="container">
       <div id="header">
-        <h2>Welcome</h2> 
+        <h2>Welcome</h2>
         viet-tools.com la cong cu ho tro ban go tieng viet co dau o bat cu moi noi ma khong can cai dat.</div>
     </div>
-    
+
     <br>
 
-    
+
 <div class="container">
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   <div class="row">
-    <div class="col-sm-2 top5">
-          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
-            <div class="radio radio-danger">
-              <input type="radio" name="radio_btn" value="Telex" onclick="AVIMObj.setMethod(1);">
-              <label>
-                TELEX
-              </label>
-            </div>
+      <!--Display only on extra small screen e.g phone-->
+    <div class="d-block d-sm-none">
+      <div class="row buton_gr_xs">
+        <div class="col-xs-3 box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radio_sx_1" value="Telex" onclick="AVIMObj.setMethod(1);">
+            <label>
+              TELEX
+            </label>
           </div>
-          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
-            <div class="radio radio-danger">
-              <input type="radio" name="radio_btn"  value="Vni" onclick="AVIMObj.setMethod(2);">
-              <label>
-                VNI
-              </label>
-            </div>
+        </div>
+        <div class="col-xs-3 box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radio_sx_2" value="Vni" onclick="AVIMObj.setMethod(2);">
+            <label>
+              VNI
+            </label>
           </div>
-          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
-            <div class="radio radio-danger">
-              <input type="radio" name="radio_btn" id="Radios3" value="Viqr" onclick="AVIMObj.setMethod(3);">
-              <label>
-                VIQR
-              </label>
-            </div> 
-          </div> 
-          <div class="row full-width mt-2 box-a" onclick="change_btn_bgr(this)">
-            <div class="radio radio-danger">
-              <input type="radio" name="radio_btn" id="Radios4" value="Off">
-              <label>
-                OFF
-              </label>
-            </div> 
-          </div> 
-            
-          
+        </div>
+        <div class="col-xs-3 box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radio_sx_3" value="Viqr" onclick="AVIMObj.setMethod(3);">
+            <label>
+              VIQR
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-3 box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radio_sx_4" value="Off">
+            <label>
+              OFF
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-12 col-md-10">
-      <div class="input-group">
-              <textarea class="form-control" ></textarea>
-            </div>
-    </div>
-    
   </div>
 
+
+  <div class="row">
+    <!--Display from on small screen e.g ipad-->
+    <div class="d-none d-sm-block">
+      <div class=<"col-lg-4 col-md-4 col-sm-2 buton_gr_sm">
+        <div class="box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radios1" value="Telex" onclick="AVIMObj.setMethod(1);">
+            <label>
+              TELEX
+            </label>
+          </div>
+        </div>
+        <div class="box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radios2" value="Vni" onclick="AVIMObj.setMethod(2);">
+            <label>
+              VNI
+            </label>
+          </div>
+        </div>
+        <div class="box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radios3" value="Viqr" onclick="AVIMObj.setMethod(3);">
+            <label>
+              VIQR
+            </label>
+          </div>
+        </div>
+        <div class="box-a" onclick="change_btn_bgr(this)">
+          <div class="radio radio-danger">
+            <input type="radio" name="radio_btn" id="Radios4" value="Off">
+            <label>
+              OFF
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+      <div class="input-group">
+        <textarea class="form-control" ></textarea>
+      </div>
+    </div>
+  </div>
 </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="avim.js"></script>
+	  <script type="text/javascript" src="avim.js"></script>
 
-	
-	
+	<script type="text/javascript">
+		function change_btn_bgr (obj) {
+
+      var box_a = document.getElementsByClassName("box-a");
+      for (var i = 0; i < box_a.length; i++) {
+        // console.log(list[i].id); //second console output
+        box_a[i].classList.remove('selected');
+        box_a[i].querySelector("input").checked = false;
+      }
+
+      if(obj.getElementsByTagName("input").item(0).value == "Telex") {
+        document.getElementById("Radios1").checked = true;
+        document.getElementById("Radio_sx_1").checked = true;
+      }
+      if(obj.getElementsByTagName("input").item(0).value == "Vni") {
+        document.getElementById("Radios2").checked = true;
+        document.getElementById("Radio_sx_2").checked = true;
+      }
+      if(obj.getElementsByTagName("input").item(0).value == "Viqr") {
+        document.getElementById("Radios3").checked = true;
+        document.getElementById("Radio_sx_3").checked = true;
+      }
+      if(obj.getElementsByTagName("input").item(0).value == "Off") {
+        document.getElementById("Radios4").checked = true;
+        document.getElementById("Radio_sx_4").checked = true;
+      }
+
+			// var s = obj.parentNode.childNodes;
+			// s.forEach((node) => {
+			// 	if(node.classList) {
+			// 	node.classList.remove('selected');
+			// 	node.querySelector("input").checked = false;
+			// 	}});
+      //
+			// obj.classList.add('selected');
+			// obj.querySelector("input").checked = true;
+		}
+	</script>
+
   </body>
 </html>
